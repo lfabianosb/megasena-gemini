@@ -12,8 +12,8 @@
     <meta name="apple-mobile-web-app-title" content="Mega-Sena">
     <link rel="apple-touch-icon" href="https://placehold.co/192x192/047857/ffffff?text=Mega">
     
-    <!-- Manifest Link (inline) - Permite a instalação do App -->
-    <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiUmVzdWx0YWRvcyBNZWdhLVNlbmEiLCJzaG9ydF9uYW1lIjoiTWVnYS1TZW5hIiwiZGVzY3JpcHRpb24iOiJDb25zdWx0ZSBvcyByZXN1bHRhZG9zIGRvcyBjb25jdXJzb3MgZGEgTWVnYS1TZW5hLiIsInN0YXJ0X3VybCI6Ii4iLCJkaXNwbGF5Ijoic3RhbmRhbG9uZSIsImJhY2tncm91bmRfY29sb3IiOiIjZjlmYWZiIiwidGhlbWVfY29sb3IiOiIjMDQ3ODU3IiwiaWNvbnMiOlt7InNyYyI6Imh0dHBzOi8vcGxhY2Vob2xkLmNvLzE5MngxOTIvMDQ3ODU3L2ZmZmZmZj90ZXh0PU1lZ2EiLCJ0eXBlIjoiaW1hZ2UvcG5nIiwic2l6ZXMiOiIxOTJ4MTkyIn0seyJzcmMiOiJodHRwczovL3BsYWNlaG9sZC5jby81MTJ4NTEyLzA0Nzg1Ny9mZmZmZmY/dGV4dD1NZWdhIiwidHlwZSI6ImltYWdlL3BuZyIsInNpemVzIjoiNTEyeDUxMiJ9XX0=">
+    <!-- Link para o ficheiro manifest.json -->
+    <link rel="manifest" href="manifest.json">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -228,8 +228,18 @@
 
             fetchContestData();
         });
+
+        // Script para registar o Service Worker
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js').then(registration => {
+              console.log('ServiceWorker registado com sucesso: ', registration.scope);
+            }, function(err) {
+              console.log('Registo do ServiceWorker falhou: ', err);
+            });
+          });
+        }
     </script>
 
 </body>
 </html>
-

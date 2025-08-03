@@ -1,0 +1,21 @@
+{
+  "name": "Resultados Mega-Sena",
+  "short_name": "Mega-Sena",
+  "description": "Consulte os resultados dos concursos da Mega-Sena.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#f9fafb",
+  "theme_color": "#047857",
+  "icons": [
+    {
+      "src": "https://placehold.co/192x192/047857/ffffff?text=Mega",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "https://placehold.co/512x512/047857/ffffff?text=Mega",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
